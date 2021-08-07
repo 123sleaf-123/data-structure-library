@@ -5,6 +5,7 @@
 Stack CreateStack(){
     Stack PtrS = (Stack) malloc(sizeof( struct SNode ));
     PtrS->Top = -1;
+    return PtrS;
 }
 
 int IsFull(Stack PtrS){
@@ -16,8 +17,8 @@ int IsFull(Stack PtrS){
 
 void Push(Stack PtrS, int item){
     if(IsFull(PtrS) == 1){
-        printf("Operation Error!\nError Code %02x\n",OVERFLOW);
-        return NULL;
+        printf("Operation Error!\nError Code %02x!\n",OVERFLOW);
+        return;
     }
     else{
         PtrS->Top++;
@@ -33,8 +34,14 @@ int IsEmpty(Stack PtrS){
 }
 
 int Pop(Stack PtrS){
-    int S_top = PtrS->Num[PtrS->Top];
+    if(PtrS->Top == -1){
+        printf("Operation Error!\nError Code %02x!\n",INVALID);
+        return NULL;
+    }
+    else{
+        int S_top = PtrS->Num[PtrS->Top];
     PtrS->Num[PtrS->Top] = NULL;
     PtrS->Top--;
     return S_top;
+    }
 }
