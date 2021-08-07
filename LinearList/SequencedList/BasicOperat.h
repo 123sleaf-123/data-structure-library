@@ -9,17 +9,17 @@ List MakeEmpty(){
 }
 
 int FindKth(int K, List PtrL){
-    if(K < 1 || K > PtrL->Last + 1){
+    if(K < 1 || K > PtrL->Last){
         printf("Operation Error!\nError Code %02x",INVALID);
         return -1;
     } 
-    return PtrL->num[K-1];
+    return PtrL->num[K];
 }
 
 int Find(int X, List PtrL){
     int i;
     for(i = 0 ; i <= PtrL->Last && X != PtrL->num[i] ; i++);
-    if(i == PtrL->Last){
+    if(i > PtrL->Last){
         printf("Operation Error!\nError Code %02x",OVERFLOW);
         return -1;
     }
