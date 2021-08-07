@@ -1,8 +1,4 @@
-//Predefine file
 #include "ErrorType.h"
-//#include "compare.h"
-//#include "visit.h"
-
 #define MAXSIZE 1000
 
 #define TRUE 1
@@ -11,16 +7,16 @@
 
 typedef struct LNode *List;
 struct LNode{
-    // ElementType Data[MAXSIZE]
+    // ElementType Data
     int num;
 
     /*
     
-    int Data[MAXSIZE];
-    char Data[MAXSIZE];
-    float Data[MAXSIZE];
-    double Data[MAXSIZE];
-    struct Data[MAXSIZE];
+    int Data;
+    char Data;
+    float Data;
+    double Data;
+    struct Data;
 
     */
 

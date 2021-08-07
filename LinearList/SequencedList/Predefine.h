@@ -1,7 +1,4 @@
-//Predefine file
 #include "ErrorType.h"
-//#include "compare.h"
-//#include "visit.h"
 
 #define MAXSIZE 1000
 
