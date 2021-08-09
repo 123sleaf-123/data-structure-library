@@ -10,7 +10,7 @@ Queue CreateQueue(){
 }
 
 int IsFull(Queue PtrQ){
-    if( PtrQ->rear == PtrQ->front)
+    if( (PtrQ->rear + 1) % MAXSIZE == PtrQ->front )
         return TRUE;
     else
         return FALSE;
@@ -24,6 +24,9 @@ void AddQ(Queue PtrQ, int item){
         return;
     }
     else{
+        if(IsEmpty(PtrQ) == FALSE && PtrQ->front == -1){
+            PtrQ->front++;
+        }
         PtrQ->rear++;
         PtrQ->Num[PtrQ->rear] = item;
     }
@@ -44,8 +47,9 @@ int DeleteQ(Queue PtrQ){
         return NULL;
     }
     else{
+        int q = PtrQ->Num[PtrQ->front];//这里可以做函数重载的文章
         PtrQ->Num[PtrQ->front] == NULL;
         PtrQ->front++;
-        return ;
+        return q;
     }
 }
