@@ -5,7 +5,7 @@
 #define FALSE 0
 
 typedef struct QNode *Queue;
-struct QNode{
+struct Node{
     // ElementType Data
     int Num;
 
@@ -19,27 +19,36 @@ struct QNode{
 
     */
 
-    struct QNode *Next;
+    struct Node *Next;
 };
-// Struct SNode S;
-// Stack PtrS;
 
-// Create an empty stack the largest length of which is MAXSIZE.
-Stack CreateStack();
+// Linked queue structure
+struct QNode {
+    // Point to the head node of queue
+    struct Node *front; 
 
-// Judge whether stack S is full or not.
-int IsFull(Stack S);
+    // point to the tail node of queue
+    struct Node *rear;
+    int length;
+};
+// Struct QNode Q;
+// Queue PtrQ;
 
-// void Push(Stack S, ElementType item);
-// Push element item into the stack.
-void Push(Stack S, int item);
+// Create an empty queue, the largest length of which is MAXSIZE.
+Queue CreateQueue();
 
-// Judge whether Stack S is empty or not.
-int IsEmpty(Stack S);
+// Judge whether Queue Q is full or not.
+int IsFull(Queue Q);
 
-// ElementType Pop(Stack S);
-// Delete and return the top element of stack.
-int Pop(Stack S);
+// void AddQ(Queue Q, ElementType item);
+// Insert element data item into the Queue.
+void AddQ(Queue Q, int item);
 
-// void ShowList(Stack S);
+// Judge whether Queue Q is empty or not.
+int IsEmpty(Queue Q);
 
+// ElementType DeleteQ(Queue Q);
+// Delete and return the front element of queue.
+int DeleteQ(Queue Q);
+
+// void ShowList(Queue Q);
